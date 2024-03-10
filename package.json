@@ -1,0 +1,41 @@
+{
+  "name": "dailybyte",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Stay informed with DailyByte, your go-to news website for the latest and most relevant stories. Explore breaking news, curated headlines across various categories, including business, entertainment, health, science, sports, and technology.",
+  "author": "yogesh bidave",
+  "keywords": [
+    "Breaking news",
+    "DailyByte",
+    "API integration",
+    "News website project",
+    "Vite framework",
+    "react-router-dom",
+    "Axios",
+    "News API",
+    "React"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.4"
+  }
+}

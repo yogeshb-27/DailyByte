@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+section{
+  padding:1.5rem 1rem;
+}
+body{
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.h-100{
+  min-height: 100vh;
+}
+a{
+  color: #333 ;
+  text-decoration: none;
+}
+input:focus{  outline: none; }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+/* navbar */
+.navbar-nav{
+  width: 100%;
+}
+.nav-link{ 
+  /* display: inline-block; */
+  letter-spacing: 1px;
+  color: #111;
+  font-weight: 500;
+}
+
+.news{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.news-box{
+  height: 325px;
+  width: 300px;
+  border-radius: .3rem;
+  margin: 1.5rem;
+  background-color: #f9f9f9;
+  position: relative;
+  }
+.news-image-cover{
+  height: 150px;
+  width: 100%;
+  background-color: #efefef;
+  border-bottom:.3px solid #777 ;
+}  
+.news-box img{
+  height: 100% ;
+  width: 100% !important;
+  border-radius: .3rem .3rem 0 0;
+}
+.news-desc{
+  height: 185px;
+  width: 100%;
+}
+.news-title{
+  line-height: 1.4;
+  margin: 1rem ;
+}
+.news-btn{
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.header{
+  min-height: 40vh;
+  background-color: #333;
+  text-transform: capitalize;
+  text-align: center;
+  color: #fff;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search{
+  max-width: 25rem;
+}
+.search input{
+  outline: none;
+  border: 1px solid #555;
+  background: #f9f9f9;
+}
