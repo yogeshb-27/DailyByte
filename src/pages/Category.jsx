@@ -9,6 +9,7 @@ const Category = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
+  const [rateLimitExceeded, setRateLimitExceeded] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const newsPerPage = 8;
 
@@ -52,9 +53,15 @@ const Category = () => {
       setLoading(false);
       setCurrentPage(1);
     } catch (error) {
+      if (error.response && error.response.status === 429) {
+        setRateLimitExceeded(true);
+      }
       console.error("Error fetching news:", error);
+    } finally {
+      setLoading(false);
     }
   };
+
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
@@ -96,7 +103,11 @@ const Category = () => {
         <p className="pt-5 mt-5 text-center"> Loading ...</p>
       ) : (
         <>
-          {noResults ? (
+          {rateLimitExceeded ? (
+            <p className="pt-5 mt-5 text-center text-danger">
+              API rate limit exceeded. Please try again later.
+            </p>
+          ) : noResults ? (
             <p className="pt-5 mt-5 text-center">No Results Found</p>
           ) : (
             <>
