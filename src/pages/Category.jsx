@@ -39,10 +39,7 @@ const Category = () => {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}`, {
         params: {
           q: query,
-          apiKey: import.meta.env.VITE_API_KEY,
           category,
-          country: "in",
-          pageSize: 100,
         },
       });
       const filteredNews = response.data.articles.filter(

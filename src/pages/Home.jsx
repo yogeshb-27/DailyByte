@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     setSearchQuery("");
-    fetchData();
+    fetchData("");
   }, []);
 
   const fetchData = async (query) => {
@@ -23,10 +23,7 @@ const Home = () => {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}`, {
         params: {
           q: query,
-          apiKey: import.meta.env.VITE_API_KEY,
           category: "general",
-          country: "in",
-          pageSize: 100,
         },
       });
       const filteredNews = response.data.articles.filter(
