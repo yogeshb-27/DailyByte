@@ -12,7 +12,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom position-sticky top-0 left-0 z-3">
       <div className="container">
         <NavLink
           className="navbar-brand fs-4 d-inline-flex align-items-center"

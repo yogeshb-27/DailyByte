@@ -51,9 +51,19 @@ const Home = () => {
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
   const currentPageNews = news.slice(indexOfFirstNews, indexOfLastNews);
 
+  const todayDateOptions = {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  };
+  const todayDate = new Date().toLocaleDateString("en-GB", todayDateOptions);
+
   return (
     <div className="container mb-5 pb-5 position-relative">
-      <header className="text-center my-5 py-5">
+      <small className="position-absolute top-0 end-0 me-lg-5 pe-lg-5 text-primary">
+        {todayDate}
+      </small>
+      <header className="text-center my-5 pt-5">
         <h1 className="display-1 fs-1 mb-4 pt-lg-5 lh-base ">
           <span className="text-primary">DailyByte</span>: Your Daily Digest of
           <br />

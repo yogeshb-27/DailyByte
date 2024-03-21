@@ -68,8 +68,18 @@ const Category = () => {
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
   const currentPageNews = news.slice(indexOfFirstNews, indexOfLastNews);
 
+  const todayDateOptions = {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  };
+  const todayDate = new Date().toLocaleDateString("en-GB", todayDateOptions);
+
   return (
     <div className="pb-5 position-relative">
+      <small className="position-absolute top-0 end-0 mt-5 me-5 pe-lg-5 text-primary">
+        {todayDate}
+      </small>
       <header className="header ">
         <h1 className="display-1 fs-2 mb-4">{category}</h1>
         <nav aria-label="breadcrumb">

@@ -80,7 +80,7 @@ input:focus{  outline: none; }
 }
 
 .header{
-  min-height: 40vh;
+  min-height: 15rem;
   background-color: #333;
   text-transform: capitalize;
   text-align: center;
