@@ -26,9 +26,18 @@ const Home = () => {
           category: "general",
         },
       });
-      const filteredNews = response.data.articles.filter(
-        (article) => article.urlToImage
-      );
+      console.log(response.data);
+      const filteredNews = response.data.articles.map((article) => {
+        const authorName = article.author ? article.author : "Unknown Author";
+        return {
+          ...article,
+          urlToImage:
+            article.urlToImage ||
+            `https://via.placeholder.com/150?text=${encodeURIComponent(
+              authorName
+            )}`,
+        };
+      });
       if (filteredNews.length === 0) setNoResults(true);
       setNews(filteredNews);
       setCurrentPage(1);
@@ -102,17 +111,15 @@ const Home = () => {
           ) : (
             <>
               <main className="news container my-5">
-                {currentPageNews.map(
-                  (item, index) =>
-                    item.urlToImage && (
-                      <NewsBox
-                        key={index}
-                        utlToImage={item.urlToImage}
-                        title={item.title}
-                        url={item.url}
-                      />
-                    )
-                )}
+                {currentPageNews.map((item, index) => (
+                  <NewsBox
+                    key={index}
+                    urlToImage={item.urlToImage}
+                    title={item.title}
+                    url={item.url}
+                    altText={item.author || "Unknown Author"}
+                  />
+                ))}
               </main>
               <div className="pagination d-flex align-items-center justify-content-center w-100">
                 <button

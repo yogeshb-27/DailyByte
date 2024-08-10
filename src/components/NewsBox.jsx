@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NewsBox({ utlToImage, title, url }) {
+export default function NewsBox({ urlToImage, title, url }) {
   const truncateTitle = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.slice(0, maxLength) + "...";
@@ -11,7 +11,7 @@ export default function NewsBox({ utlToImage, title, url }) {
   return (
     <div className="news-box border shadow text-left">
       <div className="news-image-cover">
-        <img src={utlToImage} alt="News Image" loading="lazy" />
+        <img src={urlToImage} alt="News Image" loading="lazy" />
       </div>
       <div className="news-desc">
         <h6
